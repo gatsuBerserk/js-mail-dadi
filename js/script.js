@@ -19,3 +19,16 @@ verifyButtom.addEventListener("click", function(){
 
 
 
+
+const userNumber = Math.floor(Math.random() *6 +1);
+console.log(userNumber); 
+const pcNumber =  Math.floor(Math.random() *6 +1);
+console.log(pcNumber); 
+
+if ( userNumber > pcNumber ){
+    console.log("Umano vince ahahhahhahahahahahaha");
+}else if (userNumber < pcNumber){
+    console.log("CyberTron vince");
+}else{
+    console.log("Pareggio")
+}
