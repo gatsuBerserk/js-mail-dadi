@@ -10,17 +10,49 @@
     <title>Mail and Game Carmine Passante classe 55 </title>
 </head>
 <body> 
-    <section id="game">
-        <p id="human-number">
+    <section id="email">
+        <div class="container">
+            <div class="row text-center"> 
+                <div class="col-12 fs-1 mt-3">
+                    Benvetuo! Inserisci la tua mail o registrati per avviare il gioco
+                </div>
+                <div class="col-12 text-center mt-2 "> 
+                    <input type="text" id="user-mail" placeholder="Inserisci mail">  
+                    <button class="btn btn-primary" id="control">Controlla</button> 
+                    <button type="button" class="btn btn-success" id="register">Registrati</button>
+                    <button class="btn btn-danger" id="cancel">Annulla</button>
+                </div> 
+                <div class="col-12">
+                    <div id="result">
 
-        </p> 
-        <p id="cybertron-number">
+                    </div>
+                </div>
+            </div>
+        </div>
+        
 
-        </p>
-        <p id="result">
+    </section>
+    <section id="game" class="d-none"> 
+        <div class="container">
+            <div class="row text-center"> 
+                <div class="col-6">           
+                    <p id="human-number">
 
-        </p> 
-        <button class="btn btn-danger" id="start-game"> Start Game</button>
+                    </p> 
+                </div> 
+                <div class="col-6">
+                    <p id="cybertron-number">
+
+                    </p>
+                </div>
+                <p id="result-game">
+                    
+                </p>
+                <div class="col-12">
+                    <button class="btn btn-danger" id="start-game"> Start Game</button>
+                </div>
+            </div> 
+        </div> 
     </section> 
     <script type="text/javascript" src="js/script.js"></script>
 </body>

@@ -1,21 +1,46 @@
 const mails= ["tool@mail.it", "storm@mail.com", "petrucci@mail.org"]
 console.log(mails);
 
-const userMail= prompt("Inserisci la tua mail:");
+const userMail=document.getElementById("user-mail");
 
 let  mailsRegistered= false; 
 
-for (let i = 0; i < mails.length; i++ ){
-    if ( mails[i] == userMail){
+const mailControl=document.getElementById("control"); 
+mailControl.addEventListener("click", function(){  
+    for (let i = 0; i < mails.length; i++ ){
+    if ( mails[i] == userMail.value){
         mailsRegistered= true;
     }
 }; 
 
-if (mailsRegistered == true){
+if (mailsRegistered == true){ 
+    result.innerHTML=("Email presente, puoi giocare") 
+    result.classList.add("text-success", "fs-1"); 
+    document.getElementById('game').classList.remove('d-none');
+    document.getElementById('game').classList.add('d-block');
     console.log("Email presente");
 }else{
+    result.innerHTML=("Email inesistente, non puoi giocare") 
+    result.classList.add("text-danger", "fs-1");
     console.log("mail non presente");
 }
+
+}); 
+
+const registerMail= document.getElementById("register"); 
+registerMail.addEventListener("click", function(){
+    mails.push(userMail.value); 
+    console.log(mails);
+})
+
+const reset=document.getElementById("cancel"); 
+reset.addEventListener("click", function(){
+    document.getElementById("user-mail").value=""; 
+    result.innerHTML="";
+    console.log(result);
+
+}) 
+
 
 
 
@@ -39,16 +64,19 @@ startGame.addEventListener("click", function(){
     document.getElementById("cybertron-number").innerHTML= pcNumber; 
     console.log(pcNumber); 
 
-    const resut=document.getElementById("result");
+    const resultGame=document.getElementById("result-game");
 
     if ( userNumber > pcNumber ){
-        result.innerHTML="umano vince";
+        resultGame.innerHTML="umano vince";
+        resultGame.classList.add("fs-1");
         console.log("Umano vince ahahhahhahahahahahaha");
     }else if (userNumber < pcNumber){ 
-        result.innerHTML="umano perde"; 
+        resultGame.innerHTML="umano perde"; 
+        resultGame.classList.add("fs-1"); 
         console.log("CyberTron vince");
     }else{ 
-        result.innerHTML="nulla di fatto"; 
+        resultGame.innerHTML="nulla di fatto";
+        resultGame.classList.add("fs-1");
         console.log("Pareggio");
     }
 });
